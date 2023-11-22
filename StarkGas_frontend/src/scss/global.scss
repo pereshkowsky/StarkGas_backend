@@ -1,0 +1,19 @@
+@use "./abstract/reset" as *;
+
+html {
+  background-color: whitesmoke;
+
+  font-size: 8px;
+  color: #313131;
+}
+
+body {
+  font-size: 2rem;
+
+  @media (max-width: 964px) {
+    font-size: 1.6rem;
+  }
+
+  display: grid;
+  justify-items: center;
+}

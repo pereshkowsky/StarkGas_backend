@@ -1,0 +1,90 @@
+@keyframes tip {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.header {
+  margin: 60px auto;
+
+  width: clamp(320px, 100%, 1148px);
+
+  display: grid;
+  gap: 30px;
+  grid-template-columns: max-content max-content max-content 1fr max-content max-content max-content;
+  align-items: center;
+
+  @media (max-width: 1384px) {
+    padding: 0 32px;
+  }
+
+  @media (max-width: 964px) {
+    margin: 40px 0;
+    gap: 24px;
+  }
+
+  .logo_wrapper {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px 0px rgba(8, 8, 8, 0.04), 0px 10px 10px 0px rgba(8, 8, 8, 0.03),
+      0px 23px 14px 0px rgba(8, 8, 8, 0.02), 0px 40px 16px 0px rgba(8, 8, 8, 0.01), 0px 63px 18px 0px rgba(8, 8, 8, 0),
+      -4px 4px 6px 0px rgba(139, 227, 255, 0.2) inset, 4px -4px 6px 0px rgba(139, 227, 255, 0.2) inset;
+  }
+
+  .monitors {
+    padding: 16px 18px;
+
+    border-radius: 32px;
+    background: linear-gradient(261deg, #f5fdff 56.7%, #d3f5ff 98.55%);
+    box-shadow: 0px 3px 6px 0px rgba(8, 8, 8, 0.04), 0px 10px 10px 0px rgba(8, 8, 8, 0.03),
+      0px 23px 14px 0px rgba(8, 8, 8, 0.02), 0px 40px 16px 0px rgba(8, 8, 8, 0.01), 0px 63px 18px 0px rgba(8, 8, 8, 0),
+      -4px 4px 6px 0px rgba(139, 227, 255, 0.2) inset, 4px -4px 6px 0px rgba(139, 227, 255, 0.2) inset;
+
+    font-weight: 600;
+  }
+
+  .soon {
+    padding: 10px 16px;
+
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 1px 4px 0px rgba(5, 5, 5, 0.15);
+
+    align-content: center;
+    text-align: center;
+    justify-self: end;
+
+    font-weight: 600;
+    color: #c6c6c6;
+
+    cursor: help;
+    user-select: none;
+
+    position: relative;
+
+    .tip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -34px;
+
+      padding: 4px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 1px 4px 0px rgba(5, 5, 5, 0.15);
+
+      visibility: hidden;
+    }
+    &:hover .tip {
+      visibility: visible;
+      animation: 0.5s ease 1 tip;
+    }
+  }
+}
